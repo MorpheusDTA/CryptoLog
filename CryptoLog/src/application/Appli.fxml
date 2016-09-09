@@ -17,8 +17,8 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <TextField fx:id="resourcePath" layoutX="87.0" layoutY="225.0" prefHeight="31.0" prefWidth="274.0" promptText="Resoure Absolute Path" text="Resource Absolute Path" />
-            <Button layoutX="118.0" layoutY="307.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="31.0" prefWidth="108.0" text="Encrypt">
+            <TextField fx:id="resourcePath" layoutX="87.0" layoutY="269.0" prefHeight="31.0" prefWidth="274.0" promptText="Resoure Absolute Path" text="Resource Absolute Path" />
+            <Button layoutX="118.0" layoutY="326.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="31.0" prefWidth="108.0" text="Encrypt">
             	<graphic>
                     <ImageView>
                     	<image>
@@ -27,7 +27,7 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button layoutX="298.0" layoutY="307.0" mnemonicParsing="false" onAction="#decrypt" prefHeight="31.0" prefWidth="108.0" text="Decrypt">
+            <Button layoutX="298.0" layoutY="326.0" mnemonicParsing="false" onAction="#decrypt" prefHeight="31.0" prefWidth="108.0" text="Decrypt">
             	<graphic>
                     <ImageView>
                     	<image>
@@ -36,14 +36,15 @@
                     </ImageView>
                 </graphic>
            	</Button>
-            <PasswordField fx:id="storePassword" layoutX="87.0" layoutY="113.0" prefHeight="31.0" prefWidth="350.0" promptText="Keystore File Password" />
-            <PasswordField fx:id="keyPassword" layoutX="87.0" layoutY="168.0" prefHeight="31.0" prefWidth="350.0" promptText="Key Password" />
+            <PasswordField fx:id="storePassword" layoutX="87.0" layoutY="109.0" prefHeight="31.0" prefWidth="350.0" promptText="Keystore File Password" />
+            <PasswordField fx:id="keyPassword" layoutX="87.0" layoutY="218.0" prefHeight="31.0" prefWidth="350.0" promptText="Key Password" />
             <Label fx:id="infos" layoutX="134.0" layoutY="381.0" prefHeight="31.0" prefWidth="256.0" textAlignment="CENTER" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="browse" layoutX="381.0" layoutY="225.0" mnemonicParsing="false" onAction="#showBrowser" prefHeight="31.0" prefWidth="56.0" text="Browse" />
+            <Button fx:id="browse" layoutX="378.0" layoutY="269.0" mnemonicParsing="false" onAction="#showBrowser" prefHeight="31.0" prefWidth="56.0" text="Browse" />
+            <TextField fx:id="keyAlias" layoutX="87.0" layoutY="162.0" prefHeight="31.0" prefWidth="350.0" promptText="Key Alias" />
          </children>
       </AnchorPane>
    </children>

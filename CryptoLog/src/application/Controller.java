@@ -37,6 +37,7 @@ import javafx.stage.FileChooser;
  */
 public class Controller {
 
+	@FXML protected TextField keyAlias;
 	@FXML protected Button browse;
 	@FXML protected Label infos;
 	@FXML protected TextField resourcePath;
@@ -166,7 +167,7 @@ public class Controller {
 			// store the secret key
 			KeyStore.SecretKeyEntry keyStoreEntry = new KeyStore.SecretKeyEntry(secretKey);
 			PasswordProtection keyPass = new PasswordProtection(keyPassword.getText().toCharArray());
-			keyStore.setEntry(path, keyStoreEntry, keyPass);
+			keyStore.setEntry(keyAlias.getText(), keyStoreEntry, keyPass);
 			keyStore.store(new FileOutputStream(keyStoreFile), storePassword.getText().toCharArray());
 			
 			doCrypto(Cipher.ENCRYPT_MODE, secretKey, new File(path), new File(path + ".encrypted"));
@@ -201,7 +202,7 @@ public class Controller {
 			keyStore = createKeyStore(keyStoreFile, storePassword.getText());
 		
 	    	// retrieve the stored key back
-	    	KeyStore.Entry entry = keyStore.getEntry(path.substring(0, idx), new PasswordProtection(keyPassword.getText().toCharArray()));
+	    	KeyStore.Entry entry = keyStore.getEntry(keyAlias.getText(), new PasswordProtection(keyPassword.getText().toCharArray()));
 	    	SecretKey keyFound = ((KeyStore.SecretKeyEntry) entry).getSecretKey();
 	    	
 	    	doCrypto(Cipher.DECRYPT_MODE, keyFound, new File(path), new File(outputPath));
